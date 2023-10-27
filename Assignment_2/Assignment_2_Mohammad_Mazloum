@@ -1,0 +1,33 @@
+def count_digits(n):
+    if not n:
+        return 0  
+    elif n[0].isdigit():
+        return 1 + count_digits(n[1:])  
+    else:
+        return count_digits(n[1:])  
+
+
+
+def find_Max(List_integers):
+    if len(List_integers) == 1:
+        return List_integers[0]
+    else:
+        max_list = find_Max(List_integers[1:])
+        return List_integers[0] if List_integers[0] > max_list else max_list
+
+
+
+choice = "1.Count Digits \n2.Find Max\n3.Quit "
+print(choice)
+user = int(input("Choose from above by the corresponding numbers:"))
+if user == 1:
+    choice1 = input("Enter an integer:")
+    call = count_digits(choice1)
+    print(call)
+elif user == 2:
+    user_input = input("Enter a list of integers: ")
+    user_list = [int(num) for num in user_input.split()]
+    maximum = find_Max(user_list)
+    print("The maximum number is:", maximum)
+else:
+    pass
