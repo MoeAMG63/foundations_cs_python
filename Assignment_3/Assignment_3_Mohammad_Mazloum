@@ -1,0 +1,163 @@
+def student_info():
+    student_data = [
+        {"id": 1, "name": "Alice", "major": "Computer Science", "age": 20, "GPA": 3.7},
+        {"id": 2, "name": "Bob", "major": "Engineering", "age": 21, "GPA": 3.5},
+        {"id": 3, "name": "Charlie", "major": "Mathematics", "age": 19, "GPA": 3.9},
+        {"id": 4, "name": "David", "major": "Biology", "age": 22, "GPA": 3.2},
+        {"id": 5, "name": "Eva", "major": "Psychology", "age": 20, "GPA": 3.8},
+    ]
+    return student_data
+
+all_students = student_info()
+
+for student in all_students:
+    print(f"ID: {student['id']}, Name: {student['name']}, Major: {student['major']}, Age: {student['age']}, GPA: {student['GPA']}")
+
+def student_info2():
+    student_data2 = [
+        {"id": 1, "name": "Ali", "major": "Computer Engineering", "age": 25, "GPA": 3.5},
+        {"id": 2, "name": "Bob", "major": "Engineering", "age": 21, "GPA": 3.55},
+        {"id": 8, "name": "Car", "major": "Physics", "age": 15, "GPA": 3.0},
+        {"id": 9, "name": "Dav", "major": "Biology", "age": 22, "GPA": 2.5},
+        {"id": 5, "name": "Eva", "major": "Buisness", "age": 29, "GPA": 1.8},
+    ]
+    return student_data2
+
+all_students2 = student_info2()
+
+for student in all_students2:
+    print(f"ID: {student['id']}, Name: {student['name']}, Major: {student['major']}, Age: {student['age']}, GPA: {student['GPA']}")
+
+def get_common(student_data, student_data2):
+    
+    majors = set([item['major'] for item in student_data])
+
+    majors2 = set([item['major'] for item in student_data2])
+
+    common_majors = majors & majors2
+
+    if common_majors:
+        for major in common_majors:
+            
+            return list(common_majors)
+    else:
+        print("No common majors found")
+        return []
+
+
+
+
+
+
+
+
+def get_all(student_data):
+    for data in student_data:
+        print(f"{data}")
+
+
+def get_major(student_data, major):
+    for data in student_data:
+        if data["major"] == major:
+            print(f"Student with {major} major: {data}")
+            
+def get_id(student_data, id):
+    for student_info in student_data:
+        if id == student_info["id"]:
+            print(f"Student ID: {student_info['id']}")
+            for key, value in student_info.items():
+                if key != 'id':
+                    print(f"{key}: {value}")
+
+def avg_gpa(student_data):
+    total_gpa = 0.0
+    count_gpa = 0
+
+    for student in student_data:
+        if 'GPA' in student:  
+            try:
+                gpa = float(student['GPA'])  
+                total_gpa += gpa
+                count_gpa += 1
+            except (ValueError, KeyError):
+                print(f"Issue with GPA value for student: {student.get('name', 'Unknown')}")
+
+    if count_gpa > 0:
+        average_gpa = total_gpa / count_gpa
+        print(f"The average GPA is: {average_gpa:.2f}")  
+    else:
+        print("No valid GPA found.")
+
+
+def remove_stu(student_data, id):
+    removed = False
+    for student in student_data:
+        if student['id'] == id:
+            student_data.remove(student)
+            removed = True
+            print(f"ID : {id} has been removed")
+            break
+        if not removed:
+            print("ID not found")
+    return student_data  
+
+
+def top(student_data):#this is all i can do about this choice i wont cheat
+    all_gpa = []
+    top_names = []
+    for item in student_data:
+        all_gpa.append(item["GPA"])
+        top_names.append(item["name"])
+    print(all_gpa)
+    print(top_names)
+
+
+def top_performing_students(student_data, top_n):#this is from chatgbt i didnt know how to do it
+    sorted_students = sorted(student_data, key=lambda x: x['GPA'], reverse=True)
+    top_students = tuple(student['name'] for student in sorted_students[:top_n])
+    return top_students
+
+
+def add_student_from_input(student_data, name, age, major, gpa):
+    new_student = {
+        'name': name,
+        'age': age,
+        'major': major,
+        'GPA': gpa
+    }
+    student_data.append(new_student)
+    return student_data
+
+
+
+
+menu =("1.Get Student by ID \n2.Get All Students \n3.Get Students by Major \n4.Add Student \n5.Find Common Majors \n6.Delete Student \n7.Calculate Average GPA \n8.Get Top Performers \n9.Exit")
+print(menu)
+choose = int(input("Choose from above :"))
+
+
+if choose == 1:
+    id = int(input("Enter an id"))
+    get_id(all_students, id)
+elif choose == 2:
+    get_all(all_students)
+elif choose == 3:
+    major = input("Enter a major")
+    get_major(all_students, major)
+elif choose == 4:
+    name = input("Enter the student's name: ")
+    age = int(input("Enter the student's age: "))
+    major = input("Enter the student's major: ")
+    gpa = float(input("Enter the student's GPA: "))
+    print(add_student_from_input(all_students, name, age, major, gpa))
+elif choose == 5:
+    print(get_common(all_students, all_students2))
+elif choose == 6:
+    id = int(input("Enter an id:"))
+    remove_stu(all_students, id)
+elif choose == 7:
+    avg_gpa(all_students)
+elif choose == 8:
+    top(all_students)
+elif choose == 9:
+    exit()
