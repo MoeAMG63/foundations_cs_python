@@ -16,4 +16,3 @@ def storeData():
 json_path = storeData()
 open_tabs.append(json_path)
 print(open_tabs)
-

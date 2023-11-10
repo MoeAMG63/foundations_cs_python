@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 open_tabs = []
 def storeData():
-    file_path = 'C:\\Users\\User\\foundations_cs_python\\midTerm\\JaCkSoN.json'
+    file_path = 'C:\\Users\\User\\foundations_cs_python\\midTerm\\JaCkSo'
     try:
         with open(file_path, 'r') as file:
             data = json.load(file)
@@ -14,6 +14,4 @@ def storeData():
         print("File not found")
         return None
 json_path = storeData()
-open_tabs.append(json_path)
-print(open_tabs)
-
+print(json_path)

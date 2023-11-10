@@ -14,6 +14,6 @@ def storeData():
         print("File not found")
         return None
 json_path = storeData()
+# print(json_path)
 open_tabs.append(json_path)
-print(open_tabs)
-
+print()
