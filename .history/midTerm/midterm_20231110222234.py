@@ -25,7 +25,7 @@ def OpenTab(Title, URl):
     open_tabs.append(NewTab)
     print(open_tabs)
     
-choice = int(input("Choose from the menu :"))
+choice = int(input(""))
 while True:
     if choice == 1:
         Title = input("Enter a title to open a tab :")
@@ -38,8 +38,6 @@ while True:
             if result is not None:
                 print(result)
             else:
-                print("URL! CHECK!")
+                
         OpenTab(Title, URl)
-    elif choice == 2:
-        pass
 

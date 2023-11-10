@@ -25,7 +25,7 @@ def OpenTab(Title, URl):
     open_tabs.append(NewTab)
     print(open_tabs)
     
-choice = int(input("Choose from the menu :"))
+choice = int(input(""))
 while True:
     if choice == 1:
         Title = input("Enter a title to open a tab :")
@@ -35,11 +35,6 @@ while True:
                 print("Error! Enter you URL starting with (https://) or (http://)")
                 return None
             result = handlingUrlErrors(URl)
-            if result is not None:
-                print(result)
-            else:
-                print("URL! CHECK!")
+            if result is not 
         OpenTab(Title, URl)
-    elif choice == 2:
-        pass
 

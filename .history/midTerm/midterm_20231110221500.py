@@ -25,21 +25,29 @@ def OpenTab(Title, URl):
     open_tabs.append(NewTab)
     print(open_tabs)
     
-choice = int(input("Choose from the menu :"))
+choice = int(input(""))
 while True:
     if choice == 1:
         Title = input("Enter a title to open a tab :")
         URl = input("Enter url :")
         def handlingUrlErrors(URl):
-            if not (URl.startswith("https://")) or (URl.startswith("http://")):
-                print("Error! Enter you URL starting with (https://) or (http://)")
+            try:
+                result = requests.get(URl)
+                if result.status_code == 200:
+                    return result.text
+                else:
+                    print("Error!")
+                    return None
+            except requests.exceptions.MissingSchema:
+                print("Error! : Check your URL carefully")
                 return None
-            result = handlingUrlErrors(URl)
-            if result is not None:
-                print(result)
-            else:
-                print("URL! CHECK!")
+            except requests.exceptions.RequestException:
+                print("ERROR!!")
+                return None
+        process = handlingUrlErrors(URl)
+        if process is not None:
+            print(process)
+        else:
+            print("Check the URl carfully")
         OpenTab(Title, URl)
-    elif choice == 2:
-        pass
 
