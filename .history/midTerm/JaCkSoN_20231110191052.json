@@ -1,0 +1,10 @@
+{
+    "tab_1":{
+        "Title" : "SE Factory",
+        "URL" : "https://www.sefactory.io/"
+    },
+    "tab_2":{
+        "Title" : "Quotes",
+        "URL" : "https://quotes.toscrape.com/"
+        
+}     

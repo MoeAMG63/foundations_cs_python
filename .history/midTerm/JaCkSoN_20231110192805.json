@@ -1,0 +1,25 @@
+{
+    "tabs":[
+    {
+        "Title" : "GOOGLE",
+        "URL" :"https://www.google.com/",
+        "Children" :[
+            {
+                "Title":"YouTube",
+                "URL":"https://www.youtube.com/"
+                
+            },
+            {
+            }
+        ]
+    }
+    ], 
+    "sefac":{
+        "Title" : "SE Factory",
+        "URL" : "https://www.sefactory.io/"
+    },
+    "quote":{
+        "Title" : "Quotes",
+        "URL" : "https://quotes.toscrape.com/"
+    }
+}    

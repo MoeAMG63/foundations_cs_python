@@ -1,0 +1,15 @@
+{
+    "sefac":{
+        "Title" : "SE Factory",
+        "URL" : "https://www.sefactory.io/"
+    },
+    "quote":{
+        "Title" : "Quotes",
+        "URL" : "https://quotes.toscrape.com/"
+    },
+    "google":[
+        {
+        "Title" : "GOOGLE",
+        "URL" :"https://www.google.com/"
+    ]   
+}    
