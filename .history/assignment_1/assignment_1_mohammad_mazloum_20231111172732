@@ -1,0 +1,72 @@
+
+# def Factorial(n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return n * Factorial(n - 1)
+# result =Factorial(10)
+# print(result)
+
+# print("_________________________________")
+
+# my_list = []
+# def divisors_integers(x):
+#     for i in range(1, x + 1):
+#         if x % i == 0:
+#             my_list.append(i)
+            
+# divisors_integers(5)
+# print(my_list)
+
+# print("_________________________________")
+# input_string = input("Enter a list of integers")
+# input_string2 = input_string.split()
+# converted = [int(num) for num in input_string2]
+# even_list = []
+# for i in converted:
+#     if i % 2 == 0:
+#         even_list.append(i)
+# print(even_list)
+# print("_________________________________")
+# def reversed_string(string):
+#     reversed_string1 = ""
+#     for i in string:
+#         reversed_string1 = i + reversed_string1
+#     print(reversed_string1)
+# string = input("input any string")
+# reversed_string(string)
+# print("_________________________________")
+
+# def check_pass(password):
+#     upper_case, lower_case, digit, special = 0, 0, 0, 0
+#     if len(password) < 8:
+#         print("enter a longer password")
+#     else:
+#         for i in password:
+#             if i.isupper():
+#                 upper_case += 1
+#             elif i.islower():
+#                 lower_case += 1
+#             elif i.isdigit():
+#                 digit += 1
+#             elif i == "!" or i == "#" or i == "$" or i == "?":
+#                 special += 1
+#     if len(password) > 8:
+#         if upper_case > 0 and lower_case > 0 and digit > 0 and special > 0:
+#             print("Strong Password")
+#         else:
+#             print("Weak Password")
+# password = input("enter a password")
+# check_pass(password)
+# Sample list of dictionaries
+# Sample list of dictionaries
+list_of_dicts = [
+    {'name': 'John', 'age': 30, 'city': 'New York'},
+    {'name': 'Alice', 'age': 25, 'city': 'San Francisco'},
+    {'name': 'Bob', 'age': 35, 'city': 'Los Angeles'}
+]
+
+# Print each key and its value on one line for each dictionary in a specific format
+for d in list_of_dicts:
+    print("{ " + ", ".join([f"{key}: {value}" for key, value in d.items()]) + " }")
+

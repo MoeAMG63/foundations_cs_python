@@ -86,9 +86,12 @@ def CloseTab(index):
             tab_to_remove = open_tabs[i]
             open_tabs.remove(tab_to_remove)
             tab_found = True
-            print(open_tabs)
-    if not tab_found:
-        print("No Tab Found at this Index!")
+            
+        if not tab_found:
+            print("No Tab Found at this Index!")
+    
+        
+            
 
 
 

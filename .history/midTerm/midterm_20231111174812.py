@@ -88,7 +88,7 @@ def CloseTab(index):
             tab_found = True
             print(open_tabs)
     if not tab_found:
-        print("No Tab Found at this Index!")
+            print("No Tab Found at this Index!")
 
 
 

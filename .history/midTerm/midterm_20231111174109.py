@@ -80,15 +80,13 @@ def CreateNestedTab(URl, Title, parent_indx):
         return (open_tabs)
 
 def CloseTab(index):
-    tab_found = False
     for i in range(len(open_tabs)):
         if index == i:
             tab_to_remove = open_tabs[i]
             open_tabs.remove(tab_to_remove)
-            tab_found = True
             print(open_tabs)
-    if not tab_found:
-        print("No Tab Found at this Index!")
+        else:
+        print("index out of range ")
 
 
 
@@ -112,6 +110,8 @@ while True:
     elif choice == 2:
         index = int(input("Enter the number of the Tab you want to close : "))
         CloseTab(index)
+    
+        index = int(input("Which Tab do you want to close? Enter its number :"))
     elif choice == 4:
         displayTitle(open_tabs)
     elif choice == 6:
