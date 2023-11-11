@@ -112,6 +112,8 @@ while True:
         CloseTab(index)
     elif choice == 4:
         displayTitle(open_tabs)
+    elif choice == 6:
+        clearAllTabs()
     elif choice == 5:
         parent_indx = int(input("Enter the index of the parent tab :"))
         Title = input("Enter your title :")
@@ -126,7 +128,3 @@ while True:
                     print("Error! Check! URL!")
                     URl = input("Enter the URL of the page you want to add : ")
         handlingUrlErrors(URl)
-    elif choice == 6:
-        clearAllTabs()
-    elif choice == 9:
-        break

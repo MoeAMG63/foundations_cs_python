@@ -129,4 +129,4 @@ while True:
     elif choice == 6:
         clearAllTabs()
     elif choice == 9:
-        break
+        exit

@@ -128,5 +128,3 @@ while True:
         handlingUrlErrors(URl)
     elif choice == 6:
         clearAllTabs()
-    elif choice == 9:
-        break
