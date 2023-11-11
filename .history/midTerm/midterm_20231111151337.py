@@ -65,6 +65,7 @@ while True:
                 else:
                     print("Error! Check! URL!")
                     URl = input("Enter the URL of the page you want to add a nested Tab to : ")
+                    OpenTab(Title, URl)
         handlingUrlErrors(URl)
             
     elif choice == 2:

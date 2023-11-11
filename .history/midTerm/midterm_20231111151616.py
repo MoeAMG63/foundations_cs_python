@@ -44,6 +44,14 @@ open_tabs = [
 # open_tabs.append(json_path)
 # print(open_tabs)
 
+def handlingUrlErrors(URl):
+    while True:
+        if (URl.startswith("https://")) or (URl.startswith("http://")):
+            OpenTab(URl, Title)
+            break
+        else:
+            print("Error! Check! URL!")
+            URl = input("Enter the URL of the page you want to add a nested Tab to : ")
 def OpenTab(Title, URl):
     NewTab = {
         "Title" : Title,
@@ -57,14 +65,6 @@ while True:
     if choice == 1:
         Title = input("Enter a title to open a tab :")
         URl = input("Enter the URL of the page you want to add a nested Tab to : ")
-        def handlingUrlErrors(URl):
-            while True:
-                if (URl.startswith("https://")) or (URl.startswith("http://")):
-                    OpenTab(URl, Title)
-                    break
-                else:
-                    print("Error! Check! URL!")
-                    URl = input("Enter the URL of the page you want to add a nested Tab to : ")
         handlingUrlErrors(URl)
             
     elif choice == 2:

@@ -56,16 +56,17 @@ choice = int(input("Choose from the menu :"))
 while True:
     if choice == 1:
         Title = input("Enter a title to open a tab :")
-        URl = input("Enter the URL of the page you want to add a nested Tab to : ")
+        URl = input("Enter url :")
         def handlingUrlErrors(URl):
-            while True:
-                if (URl.startswith("https://")) or (URl.startswith("http://")):
-                    OpenTab(URl, Title)
-                    break
-                else:
-                    print("Error! Check! URL!")
-                    URl = input("Enter the URL of the page you want to add a nested Tab to : ")
-        handlingUrlErrors(URl)
-            
+        while True:
+            if not (URl.startswith("https://")) or (URl.startswith("http://")):
+                print("Error! Enter you URL starting with (https://) or (http://)")
+                return None
+            result = handlingUrlErrors(URl)
+            if result is not None:
+                print(result)
+            else:
+                print("URL! CHECK!")
+        OpenTab(Title, URl)
     elif choice == 2:
         pass

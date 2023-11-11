@@ -53,8 +53,8 @@ def OpenTab(Title, URl):
     print(open_tabs)
     
 choice = int(input("Choose from the menu :"))
-while True:
-    if choice == 1:
+
+if choice == 1:
         Title = input("Enter a title to open a tab :")
         URl = input("Enter the URL of the page you want to add a nested Tab to : ")
         def handlingUrlErrors(URl):
@@ -65,7 +65,8 @@ while True:
                 else:
                     print("Error! Check! URL!")
                     URl = input("Enter the URL of the page you want to add a nested Tab to : ")
-        handlingUrlErrors(URl)
+                    OpenTab(Title, URl)
+            handlingUrlErrors(URl)
             
     elif choice == 2:
         pass
