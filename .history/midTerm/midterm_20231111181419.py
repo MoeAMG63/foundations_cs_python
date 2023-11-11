@@ -34,7 +34,9 @@ open_tabs = [
 def SaveTabs(file_path, openTabs):
     try:
         with open(file_path, 'w') as file:
+            json,c
             json.dump(open_tabs, file, indent=2)
+        
     except FileNotFoundError:
         print("File doesn't exist")
         return None

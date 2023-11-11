@@ -32,14 +32,14 @@ open_tabs = [
             }
             ]
 def SaveTabs(file_path, openTabs):
+    # file_path = 'C:\\Users\\User\\foundations_cs_python\\midTerm\\JaCkSoN.json'
     try:
         with open(file_path, 'w') as file:
-            json.dump(open_tabs, file, indent=2)
+            json.dumps(open_tabs, file, indent=2)
+        
     except FileNotFoundError:
         print("File doesn't exist")
         return None
-
-
 
 def OpenTab(Title, URl):
     NewTab = {

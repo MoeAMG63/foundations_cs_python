@@ -31,15 +31,15 @@ open_tabs = [
                 "URl" : "https://www.sefactory.io/"
             }
             ]
-def SaveTabs(file_path, openTabs):
+def SaveTabs(file_path):
+    # file_path = 'C:\\Users\\User\\foundations_cs_python\\midTerm\\JaCkSoN.json'
     try:
         with open(file_path, 'w') as file:
-            json.dump(open_tabs, file, indent=2)
+            json.dumps(open_tabs, file, indent=2)
+        
     except FileNotFoundError:
         print("File doesn't exist")
         return None
-
-
 
 def OpenTab(Title, URl):
     NewTab = {
@@ -127,7 +127,7 @@ while True:
         clearAllTabs()
     elif choice == 7:
         file_path = input("Enter your file path :")
-        json_path = SaveTabs(file_path, open_tabs)
+        json_path = SaveTabs()
         open_tabs.append(json_path)
         print(open_tabs)
 
