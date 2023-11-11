@@ -71,11 +71,11 @@ def CreateNestedTab(URl, Title):
         "Title" : Title,
         "URl" : URl
     }
-    for tab in open_tabs:
+    for tab in open_tabs[0]["tabs"]:
             if 0 < len(tab) > 2:
                 parent = tab["Children"]
                 parent.append(nested_tab)
-    print(open_tabs)
+    print(open_Tabs)
     print("Nested Tab added Successfully.")
 
 
@@ -83,7 +83,7 @@ choice = int(input("Choose from the menu :"))
 while True:
     if choice == 1:
         Title = input("Enter a title to open a tab :")
-        URl = input("Enter the URL of the page you want to open : ")
+        URl = input("Enter the URL of the page you want to add a nested Tab to : ")
         def handlingUrlErrors(URl):
             while True:
                 if (URl.startswith("https://")) or (URl.startswith("http://")):
@@ -91,22 +91,13 @@ while True:
                     break
                 else:
                     print("Error! Check! URL!")
-                    URl = input("Enter the URL of the page you want to open : ")
+                    URl = input("Enter the URL of the page you want to add a nested Tab to : ")
         handlingUrlErrors(URl)
             
     elif choice == 4:
         displayTitle(open_tabs)
     elif choice == 6:
         clearAllTabs()
-    elif choice == 5:
-        Title = input("Enter your title :")
-        URl = input("Enter the URL of the page you want to add : ")
-        def handlingUrlErrors(URl):
-            while True:
-                if (URl.startswith("https://")) or (URl.startswith("http://")):
-                    CreateNestedTab(URl, Title)
-                    break
-                else:
-                    print("Error! Check! URL!")
-                    URl = input("Enter the URL of the page you want to add : ")
-        handlingUrlErrors(URl)
+        break
+
+        

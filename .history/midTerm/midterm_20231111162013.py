@@ -91,7 +91,7 @@ while True:
                     break
                 else:
                     print("Error! Check! URL!")
-                    URl = input("Enter the URL of the page you want to open : ")
+                    URl = input("Enter the URL of the page you want to add : ")
         handlingUrlErrors(URl)
             
     elif choice == 4:
@@ -110,3 +110,4 @@ while True:
                     print("Error! Check! URL!")
                     URl = input("Enter the URL of the page you want to add : ")
         handlingUrlErrors(URl)
+        
