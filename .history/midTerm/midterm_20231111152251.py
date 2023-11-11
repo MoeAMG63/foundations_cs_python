@@ -85,8 +85,5 @@ while True:
             
     elif choice == 4:
         displayTitle(open_tabs)
-    elif choice == 6:
-        clearAllTabs()
-        break
 
         

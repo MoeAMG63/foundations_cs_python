@@ -60,9 +60,9 @@ def displayTitle(open_Tabs):
                 print(" =>: "  ,nest["Title"])
 
 def clearAllTabs():
-    open_tabs.clear()
+    open_Tabs.clear()
     print("All Tabs are cleared.")
-    print(open_tabs)
+    print(open_Tabs)
 
 
 
@@ -85,8 +85,5 @@ while True:
             
     elif choice == 4:
         displayTitle(open_tabs)
-    elif choice == 6:
-        clearAllTabs()
-        break
 
         
