@@ -55,9 +55,9 @@ def OpenTab(Title, URl):
 def displayTitle(open_Tabs):
     for tab in open_Tabs:
         print(tab['Title'])
-        if 0 < len(tab) > 2:
+        if len(tab) > 2:
             for nest in tab["Children"]:
-                print(" =>: "  ,nest["Title"]) 
+                print(" =>: "  ,nest["Title"])
 
 def clearAllTabs():
     open_tabs.clear()
@@ -65,20 +65,18 @@ def clearAllTabs():
     print(open_tabs)
 
 
-def CreateNestedTab(URl, Title, parent_indx ):
+def CreateNestedTab(URl, Title):
 
     nested_tab ={
         "Title" : Title,
         "URl" : URl
     }
-    if "Children" not in open_tabs:
-        open_tabs[parent_indx]["Children"] = [nested_tab]
-        
-        return(open_tabs)
-    else:
-        open_tabs[parent_indx]["Children"].append(nested_tab)
-        return (open_tabs)
-    
+    for tab in open_tabs:
+            if 0 < len(tab) > 2:
+                parent = tab["Children"]
+                parent.append(nested_tab)
+    print(open_tabs)
+    print("Nested Tab added Successfully.")
 
 
 choice = int(input("Choose from the menu :"))
@@ -101,14 +99,13 @@ while True:
     elif choice == 6:
         clearAllTabs()
     elif choice == 5:
-        parent_indx = int(input("Enter the index of the parent tab :"))
+        parent_indx = int(input)
         Title = input("Enter your title :")
         URl = input("Enter the URL of the page you want to add : ")
         def handlingUrlErrors(URl):
             while True:
                 if (URl.startswith("https://")) or (URl.startswith("http://")):
-                    print(CreateNestedTab(URl, Title, parent_indx ))
-                    print("Nested Tab added Successfully.")
+                    CreateNestedTab(URl, Title)
                     break
                 else:
                     print("Error! Check! URL!")

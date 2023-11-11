@@ -108,7 +108,6 @@ while True:
             while True:
                 if (URl.startswith("https://")) or (URl.startswith("http://")):
                     print(CreateNestedTab(URl, Title, parent_indx ))
-                    print("Nested Tab added Successfully.")
                     break
                 else:
                     print("Error! Check! URL!")

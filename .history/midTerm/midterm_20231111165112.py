@@ -71,14 +71,17 @@ def CreateNestedTab(URl, Title, parent_indx ):
         "Title" : Title,
         "URl" : URl
     }
-    if "Children" not in open_tabs:
-        open_tabs[parent_indx]["Children"] = [nested_tab]
-        
-        return(open_tabs)
-    else:
-        open_tabs[parent_indx]["Children"].append(nested_tab)
-        return (open_tabs)
-    
+    for tab in open_tabs:
+        # if parent_indx == tab:
+            if "Children" not in open_tabs:
+                open_tabs[parent_indx]["Children"] = [
+
+                print(open_tabs)
+            
+
+
+    print(open_tabs)
+    print("Nested Tab added Successfully.")
 
 
 choice = int(input("Choose from the menu :"))
@@ -107,8 +110,7 @@ while True:
         def handlingUrlErrors(URl):
             while True:
                 if (URl.startswith("https://")) or (URl.startswith("http://")):
-                    print(CreateNestedTab(URl, Title, parent_indx ))
-                    print("Nested Tab added Successfully.")
+                    CreateNestedTab(URl, Title, parent_indx )
                     break
                 else:
                     print("Error! Check! URL!")
