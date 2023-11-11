@@ -1,0 +1,30 @@
+{
+    "tabs" : [
+        {
+            "Title" : "w3schools",
+            "URl" : https://www.w3schools.com/"
+        },
+        {
+            "Title" : "Google",
+            "URl" : "https://www.google.com/",
+            "Children" : [
+                {
+                    "Title" : "Youtube",
+                    "URl" : "https://www.youtube.com/"
+                },
+                {
+                    "Title" :"Google Drive",
+                    "URl" : "https://www.googledrive.com/"
+                }
+            ]
+        },
+        {
+            "Title" : "Coding Game",
+            "URl" : "https://www.codingame.com/"
+        },
+        {
+            "Title" : "SE Factory",
+            "URl" : "https://www.sefactory.io/"
+        }
+    ]
+}

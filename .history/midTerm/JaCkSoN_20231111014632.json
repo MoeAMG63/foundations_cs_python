@@ -1,0 +1,30 @@
+{
+    "tabs" : [
+        {
+            "Title" : "Quotes To Scrape",
+            "URL" : "https://quotes.toscrape.com/"
+        },
+        {
+            "Title" : "Google",
+            "URL" : "https://www.google.com/",
+            "children" : [
+                {
+                    "Title" : "Youtube",
+                    "URL" : "https://www.youtube.com/"
+                },
+                {
+                    "Title" :"Google Drive",
+                    "URL" : "https://www.googledrive.com/"
+                }
+            ]
+        },
+        {
+            "Title" : "Coding Game",
+            "URL" : "https://www.codingame.com/"
+        },
+        {
+            "Title" : "YouTube-JSON Tutorial",
+            "URL" : "https://www.youtube.com/watch?v=9N6a-VLBa2I&list=WL&index=1"
+        }
+    ]
+}

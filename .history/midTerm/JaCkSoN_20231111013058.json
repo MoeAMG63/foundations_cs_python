@@ -1,0 +1,39 @@
+{
+    "tabs":[
+    {
+        "Title" : "GOOGLE",
+        "URL" :"https://www.google.com/",
+        "children" :[
+            {
+                "Title":"YouTube",
+                "URL":"https://www.youtube.com/"
+                
+            },
+            {
+                "Title":"Google Drive",
+                "URL": "https://www.google.com/drive/"
+            }
+        ]
+    }
+    ], 
+    "Webs":[
+        {
+        "Title" : "SE Factory",
+        "URL" : "https://www.sefactory.io/"
+    },
+        {
+            "Title" : "Coding Game",
+            "URL" : "https://www.codingame.com/"
+        }
+    ],
+    "quote":[
+    {
+        "Title" : "Quotes",
+        "URL" : "https://quotes.toscrape.com/"
+        
+    }
+    {
+        
+    }
+    ]
+}
