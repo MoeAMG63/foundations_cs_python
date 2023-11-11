@@ -52,18 +52,13 @@ def OpenTab(Title, URl):
     open_tabs.append(NewTab)
     print(open_tabs)
     
-def displayTitle(open_Tabs):
-    for tab in open_Tabs:
-        print(tab['Title'])
-        if len(tab) > 2:
-            for nest in tab["Children"]:
-                print(" =>: "  ,nest["Title"])
 
 
 
 
 
 
+    
 choice = int(input("Choose from the menu :"))
 while True:
     if choice == 1:
@@ -80,6 +75,4 @@ while True:
         handlingUrlErrors(URl)
             
     elif choice == 4:
-        displayTitle(open_tabs)
-
-        
+        pass

@@ -53,7 +53,7 @@ def OpenTab(Title, URl):
     print(open_tabs)
     
 def displayTitle(open_Tabs):
-    for tab in open_Tabs:
+    for tab in open_Tabs[0]["tabs"]:
         print(tab['Title'])
         if len(tab) > 2:
             for nest in tab["Children"]:
@@ -80,6 +80,4 @@ while True:
         handlingUrlErrors(URl)
             
     elif choice == 4:
-        displayTitle(open_tabs)
-
-        
+        displayTitle()

@@ -65,7 +65,7 @@ def displayTitle(open_Tabs):
 
 
 choice = int(input("Choose from the menu :"))
-while True:
+# while True:
     if choice == 1:
         Title = input("Enter a title to open a tab :")
         URl = input("Enter the URL of the page you want to add a nested Tab to : ")
