@@ -31,8 +31,6 @@ open_tabs = [
                 "URl" : "https://www.sefactory.io/"
             }
             ]
-
-imported_data = []
 def SaveTabs(file_path, openTabs):
     try:
         with open(file_path, 'w') as file:
@@ -40,6 +38,8 @@ def SaveTabs(file_path, openTabs):
     except FileNotFoundError:
         print("File doesn't exist")
         return None
+
+
 
 def OpenTab(Title, URl):
     NewTab = {
@@ -87,14 +87,6 @@ def CloseTab(index):
     if not tab_found:
         print("No Tab Found at this Index!")
 
-def loadTabs(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-        return data
-    except FileNotFoundError:
-        print("File not found")
-        return None
 
 
 
@@ -142,9 +134,6 @@ while True:
         print(open_tabs)
 
     elif choice == 8:
-        file_path = input("Enter a file path :")
-        json_path = loadTabs(file_path)
-        imported_data.append(json_path)
-        print(imported_data)
+        pass
     elif choice == 9:
         break

@@ -88,6 +88,7 @@ def CloseTab(index):
         print("No Tab Found at this Index!")
 
 def loadTabs(file_path):
+    # file_path = 'C:\Users\User\foundations_cs_python\midTerm\import.json'
     try:
         with open(file_path, 'r') as file:
             data = json.load(file)

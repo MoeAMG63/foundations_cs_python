@@ -88,6 +88,9 @@ def CloseTab(index):
         print("No Tab Found at this Index!")
 
 def loadTabs(file_path):
+    # file_path = 'json_path = loadTabs()
+open_tabs.append(json_path)
+print(open_tabs)'
     try:
         with open(file_path, 'r') as file:
             data = json.load(file)

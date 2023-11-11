@@ -32,7 +32,7 @@ open_tabs = [
             }
             ]
 
-imported_data = []
+
 def SaveTabs(file_path, openTabs):
     try:
         with open(file_path, 'w') as file:
@@ -88,6 +88,7 @@ def CloseTab(index):
         print("No Tab Found at this Index!")
 
 def loadTabs(file_path):
+    # file_path = 'C:\Users\User\foundations_cs_python\midTerm\save.json'
     try:
         with open(file_path, 'r') as file:
             data = json.load(file)
@@ -144,7 +145,7 @@ while True:
     elif choice == 8:
         file_path = input("Enter a file path :")
         json_path = loadTabs(file_path)
-        imported_data.append(json_path)
-        print(imported_data)
+        open_tabs.append(json_path)
+        print(open_tabs)
     elif choice == 9:
         break
