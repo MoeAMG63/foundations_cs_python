@@ -33,7 +33,7 @@ open_tabs = [
 
 
 import_data = []
-def SaveTabs(file_path):  # https://youtu.be/pTT7HMqDnJw?si=ZVwGZkGAtY-vxdWr
+def SaveTabs(file_path):  
     try:
         with open(file_path, 'w') as file:
             json.dump(open_tabs, file, indent=2)
@@ -99,7 +99,7 @@ def CloseTab(index_of_tab, open_tabs):
 
 def loadTabs(file_path2):
     try:
-        with open(file_path2, 'r') as file2: # https://youtu.be/pTT7HMqDnJw?si=ZVwGZkGAtY-vxdWr
+        with open(file_path2, 'r') as file2:
             data = json.load(file2)
         return data
     except FileNotFoundError as fn:
@@ -110,7 +110,7 @@ def loadTabs(file_path2):
     except ValueError as ve:
         print(f"Enter a File Path! {ve}")
 
-def webScrap(tab_index): #https://youtu.be/gRLHr664tXA?si=qs64U_MGP81q1Cle
+def webScrap(tab_index):
     try:
         if tab_index:
             tab = open_tabs[int(tab_index)]

@@ -110,7 +110,7 @@ def loadTabs(file_path2):
     except ValueError as ve:
         print(f"Enter a File Path! {ve}")
 
-def webScrap(tab_index): #https://youtu.be/gRLHr664tXA?si=qs64U_MGP81q1Cle
+def webScrap(tab_index):
     try:
         if tab_index:
             tab = open_tabs[int(tab_index)]

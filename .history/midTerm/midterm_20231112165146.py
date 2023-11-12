@@ -110,14 +110,14 @@ def loadTabs(file_path2):
     except ValueError as ve:
         print(f"Enter a File Path! {ve}")
 
-def webScrap(tab_index): #https://youtu.be/gRLHr664tXA?si=qs64U_MGP81q1Cle
+def webScrap(tab_index):
     try:
         if tab_index:
             tab = open_tabs[int(tab_index)]
             scrape_url = tab["URl"]
             html_content = requests.get(scrape_url)
             if html_content.status_code == 200:
-                content = BeautifulSoup(html_content.text, 'html.parser')
+                content = BeautifulSoup(html_content.text, 'html.parse')
                 print(content.findAll())
             else:
                 print("Failed to scrape")
