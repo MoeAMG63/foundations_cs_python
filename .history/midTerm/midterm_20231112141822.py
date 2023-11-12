@@ -111,15 +111,12 @@ def webScrap(tab_index):
         scrape_url = tab["URl"]
         html_content = requests.get(scrape_url)
         if html_content.status_code == 200:
-            content = BeautifulSoup(html_content.text, 'html.parser')
-            print(content.findAll())
-        else:
-            print("Failed to scrape")
+                content = BeautifulSoup(html_content.text, 'html.parser')
+                print(content.findAll)
+            else:
+                print("Failed to scrape")
             
-    except IndexError:
-        print("Invalid Tab index!")
-    except ValueError:
-        print("Enter an integer!")
+    
 
 
 

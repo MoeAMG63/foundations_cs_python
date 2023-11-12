@@ -1,7 +1,7 @@
 import json
 import os
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
 
 open_tabs = [
             {
@@ -36,7 +36,7 @@ imported_data = []
 def SaveTabs(file_path, open_tabs):
     try:
         with open(file_path, 'r+') as file:
-            data = json.dump(file)
+            data = json.load(file)
         return data
     except FileNotFoundError:
         print("File not found")
@@ -73,6 +73,7 @@ def CreateNestedTab(URl, Title, parent_indx):
     }
     if "Children" not in open_tabs:
         open_tabs[parent_indx]["Children"] = [nested_tab]
+        
         return(open_tabs)
     else:
         open_tabs[parent_indx]["Children"].append(nested_tab)
@@ -105,28 +106,6 @@ def loadTabs(file_path):
         print("File not found")
         return None
 
-def webScrap(tab_index):
-    try:
-        tab = open_tabs[tab_index]
-        scrape_url = tab["URl"]
-        html_content = requests.get(scrape_url)
-        if html_content.status_code == 200:
-            content = BeautifulSoup(html_content.text, 'html.parser')
-            print(content.findAll())
-        else:
-            print("Failed to scrape")
-            
-    except IndexError:
-        print("Invalid Tab index!")
-    except ValueError:
-        print("Enter an integer!")
-
-
-
-
-
-
-
 
 
 
@@ -150,8 +129,7 @@ while True:
         CloseTab(index_of_tab, open_tabs)
         
     elif choice == 3:
-        tab_index =int(input("Enter the tab index to web scrape it :"))
-        webScrap(tab_index)
+        pass
     elif choice == 4:
         displayTitle(open_tabs)
         break
@@ -173,7 +151,7 @@ while True:
         clearAllTabs()
         break
     elif choice == 7:
-        file_path = input("Enter your file path :")
+        file_path = input("Enter your file path :").strip()
         json_path = SaveTabs(file_path, open_tabs)
         imported_data.append(json_path)
         print(imported_data)

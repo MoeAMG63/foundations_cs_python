@@ -112,7 +112,7 @@ def webScrap(tab_index):
         html_content = requests.get(scrape_url)
         if html_content.status_code == 200:
             content = BeautifulSoup(html_content.text, 'html.parser')
-            print(content.findAll())
+            print(content.findAll().prettify)
         else:
             print("Failed to scrape")
             

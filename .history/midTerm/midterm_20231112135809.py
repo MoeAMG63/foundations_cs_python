@@ -1,7 +1,7 @@
 import json
 import os
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
 
 open_tabs = [
             {
@@ -73,6 +73,7 @@ def CreateNestedTab(URl, Title, parent_indx):
     }
     if "Children" not in open_tabs:
         open_tabs[parent_indx]["Children"] = [nested_tab]
+        
         return(open_tabs)
     else:
         open_tabs[parent_indx]["Children"].append(nested_tab)
@@ -105,21 +106,7 @@ def loadTabs(file_path):
         print("File not found")
         return None
 
-def webScrap(tab_index):
-    try:
-        tab = open_tabs[tab_index]
-        scrape_url = tab["URl"]
-        html_content = requests.get(scrape_url)
-        if html_content.status_code == 200:
-            content = BeautifulSoup(html_content.text, 'html.parser')
-            print(content.findAll())
-        else:
-            print("Failed to scrape")
-            
-    except IndexError:
-        print("Invalid Tab index!")
-    except ValueError:
-        print("Enter an integer!")
+def 
 
 
 
@@ -150,8 +137,7 @@ while True:
         CloseTab(index_of_tab, open_tabs)
         
     elif choice == 3:
-        tab_index =int(input("Enter the tab index to web scrape it :"))
-        webScrap(tab_index)
+        pass
     elif choice == 4:
         displayTitle(open_tabs)
         break

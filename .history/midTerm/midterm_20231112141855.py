@@ -116,10 +116,7 @@ def webScrap(tab_index):
         else:
             print("Failed to scrape")
             
-    except IndexError:
-        print("Invalid Tab index!")
-    except ValueError:
-        print("Enter an integer!")
+    except Inde
 
 
 
