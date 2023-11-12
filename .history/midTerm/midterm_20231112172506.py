@@ -59,7 +59,7 @@ def OpenTab(Title, URl):  # here i created a dic to let the user inputs the titl
 #&&&&&&&&&&&&&&&&&&&&&&&&Choice 4 &&&&&&&&&&&&&&&&&&&&&&&
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def displayTitle(open_Tabs):   # here iteration over open_tabs list of dic happens to print all the titles
-    for tab in open_Tabs:       # 2nd iteration to print the title of nested tab if exists
+    for tab in open_Tabs:       # 
         print(tab['Title'])
         if 0 < len(tab) > 2:
             for nest in tab["Children"]:
@@ -79,8 +79,8 @@ def clearAllTabs():
 #&&&&&&&&&&&&&&&&&&&&&Choice 5 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def CreateNestedTab(URl, Title, parent_indx):
-                                                    #here if there is no children or nested tabs in the entered index from the user children is created
-    nested_tab ={                                   # if nested tab exists the input is added to the already nested tabs
+
+    nested_tab ={
         "Title" : Title,
         "URl" : URl
     }

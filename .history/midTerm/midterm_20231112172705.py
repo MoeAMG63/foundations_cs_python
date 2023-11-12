@@ -80,7 +80,7 @@ def clearAllTabs():
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def CreateNestedTab(URl, Title, parent_indx):
                                                     #here if there is no children or nested tabs in the entered index from the user children is created
-    nested_tab ={                                   # if nested tab exists the input is added to the already nested tabs
+    nested_tab ={                                   
         "Title" : Title,
         "URl" : URl
     }

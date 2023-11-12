@@ -53,34 +53,27 @@ def OpenTab(Title, URl):  # here i created a dic to let the user inputs the titl
     }
     open_tabs.append(NewTab)
     print(open_tabs)
-
-
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&Choice 4 &&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-def displayTitle(open_Tabs):   # here iteration over open_tabs list of dic happens to print all the titles
-    for tab in open_Tabs:       # 2nd iteration to print the title of nested tab if exists
+    
+def displayTitle(open_Tabs):
+    for tab in open_Tabs:
         print(tab['Title'])
         if 0 < len(tab) > 2:
             for nest in tab["Children"]:
                 print(" =>: "  ,nest["Title"]) 
 
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&Choice 6 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
 def clearAllTabs():
-    print("Tabs Before Deletion :") #simply i used clear function
+    print("Tabs Before Deletion :")
     print(open_tabs)
     open_tabs.clear()
     print("All Tabs are cleared.")
     print(open_tabs)
 
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&Choice 5 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
 def CreateNestedTab(URl, Title, parent_indx):
-                                                    #here if there is no children or nested tabs in the entered index from the user children is created
-    nested_tab ={                                   # if nested tab exists the input is added to the already nested tabs
+
+    nested_tab ={
         "Title" : Title,
         "URl" : URl
     }
@@ -90,10 +83,7 @@ def CreateNestedTab(URl, Title, parent_indx):
     else:
         open_tabs[parent_indx]["Children"].append(nested_tab)
         return (open_tabs)
-    
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&Choice 2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
 def CloseTab(index_of_tab, open_tabs):
     if not index_of_tab:
         deletedTab = open_tabs.pop(-1)
@@ -111,9 +101,7 @@ def CloseTab(index_of_tab, open_tabs):
         print("Enter an integer!!!")
 
 
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&Choice 8 &&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
 def loadTabs(file_path2):
     try:
         with open(file_path2, 'r') as file2: # https://youtu.be/pTT7HMqDnJw?si=ZVwGZkGAtY-vxdWr
@@ -127,10 +115,6 @@ def loadTabs(file_path2):
     except ValueError as ve:
         print(f"Enter a File Path! {ve}")
 
-
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&Choice 3 &&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def webScrap(tab_index): #https://youtu.be/gRLHr664tXA?si=qs64U_MGP81q1Cle
     try:
         if tab_index:
@@ -154,9 +138,7 @@ def webScrap(tab_index): #https://youtu.be/gRLHr664tXA?si=qs64U_MGP81q1Cle
     except ValueError:
         print("Enter an integer!")
 
-        
-####################### MENU #################################
-##############################################################
+
 menu = '''
 1.Open Tab
 2.Close Tab
@@ -169,7 +151,7 @@ menu = '''
 9.Exit
 '''
 print(menu)
-print("-" * 50) # Seperator
+print("-" * 50)
 
 while True:
     choice = int(input("Choose from the menu :"))
