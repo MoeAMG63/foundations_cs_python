@@ -95,8 +95,8 @@ def CreateNestedTab(URl, Title, parent_indx):
 #&&&&&&&&&&&&&&&&&&&&Choice 2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 def CloseTab(index_of_tab, open_tabs): # index of tab parameter is the user input if nothing is entered last tab is closed by pop method
-    if not index_of_tab:                # in the try/except block i handled a value error and converted the input to an integer
-        deletedTab = open_tabs.pop(-1)                  
+    if not index_of_tab:                # 
+        deletedTab = open_tabs.pop(-1)
         print(f"Last tab deleted => : {deletedTab}")
         return
     try:
