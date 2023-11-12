@@ -46,7 +46,7 @@ def SaveTabs(file_path):  # https://youtu.be/pTT7HMqDnJw?si=ZVwGZkGAtY-vxdWr
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 #&&&&&&&&&&&&&&&&&&&Choice 1&&&&&&&&&&&&&&&&&&&&&&&&&&&
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
-def OpenTab(Title, URl):  # here i created a dic to let the user inputs the title and url the append it to the main dic
+def OpenTab(Title, URl):  # here i created a dic to let the user inputs the title and url the append it to 
     NewTab = {
         "Title" : Title,
         "URL": URl

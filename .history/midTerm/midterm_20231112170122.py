@@ -43,10 +43,8 @@ def SaveTabs(file_path):  # https://youtu.be/pTT7HMqDnJw?si=ZVwGZkGAtY-vxdWr
     except FileNotFoundError:
         print("File not found")
         return None
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&Choice 1&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
-def OpenTab(Title, URl):  # here i created a dic to let the user inputs the title and url the append it to the main dic
+#
+def OpenTab(Title, URl):
     NewTab = {
         "Title" : Title,
         "URL": URl
