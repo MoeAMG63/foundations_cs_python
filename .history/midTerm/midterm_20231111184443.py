@@ -57,8 +57,6 @@ def displayTitle(open_Tabs):
                 print(" =>: "  ,nest["Title"]) 
 
 def clearAllTabs():
-    print("Tabs Before Deletion :")
-    print(open_tabs)
     open_tabs.clear()
     print("All Tabs are cleared.")
     print(open_tabs)
@@ -78,16 +76,12 @@ def CreateNestedTab(URl, Title, parent_indx):
         open_tabs[parent_indx]["Children"].append(nested_tab)
         return (open_tabs)
 
-def CloseTab(index1=None):
-    if index1 is None:
-        if open_tabs:
-            tab_to_close = open_tabs.pop()
-            print(f"Closed Tab => : {tab_to_close}")
-            print(open_tabs)
-        else:
-            print("No Tabs")
+def CloseTab(index1):
     tab_found = False
     for i in range(len(open_tabs)):
+        if index1 is None:
+            if open_tabs:
+                open_tabs
         if index1 == i:
             tab_to_remove = open_tabs[i]
             open_tabs.remove(tab_to_remove)
@@ -126,22 +120,14 @@ while True:
                     print("Error! Check! URL!")
                     URl = input("Enter the URL of the page you want to open : ")
         handlingUrlErrors(URl)
-    # elif choice == 2:
-    #     user_input = input("Enter the number of the Tab you want to close (or press Enter to close the last tab): ")
-    #     if user_input.strip():
-    #         try:
-    #             index_to_close = int(user_input)
-    #             CloseTab(index_to_close)
-    #         except ValueError:
-    #             print("Invalid input. Please enter a valid integer.")
-    #     else:
-    #         CloseTab()  
+    elif choice == 2:
+        index1 =int(input("Enter the number of the Tab you want to close : "))
+        CloseTab(index1)
 
     elif choice == 3:
         pass
     elif choice == 4:
         displayTitle(open_tabs)
-        break
     elif choice == 5:
         parent_indx = int(input("Enter the index of the parent tab :"))
         Title = input("Enter your title :")
@@ -158,7 +144,6 @@ while True:
         handlingUrlErrors(URl)
     elif choice == 6:
         clearAllTabs()
-        break
     elif choice == 7:
         file_path = input("Enter your file path :")
         json_path = SaveTabs(file_path, open_tabs)

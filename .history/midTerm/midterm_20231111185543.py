@@ -57,8 +57,6 @@ def displayTitle(open_Tabs):
                 print(" =>: "  ,nest["Title"]) 
 
 def clearAllTabs():
-    print("Tabs Before Deletion :")
-    print(open_tabs)
     open_tabs.clear()
     print("All Tabs are cleared.")
     print(open_tabs)
@@ -126,22 +124,21 @@ while True:
                     print("Error! Check! URL!")
                     URl = input("Enter the URL of the page you want to open : ")
         handlingUrlErrors(URl)
-    # elif choice == 2:
-    #     user_input = input("Enter the number of the Tab you want to close (or press Enter to close the last tab): ")
-    #     if user_input.strip():
-    #         try:
-    #             index_to_close = int(user_input)
-    #             CloseTab(index_to_close)
-    #         except ValueError:
-    #             print("Invalid input. Please enter a valid integer.")
-    #     else:
-    #         CloseTab()  
+    elif choice == 2:
+        user_input = input("Enter the number of the Tab you want to close (or press Enter to close the last tab): ")
+    if user_input.strip():  # Check if the input is not an empty string
+        try:
+        index_to_close = int(user_input)
+        CloseTab(index_to_close)
+        except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+    else:
+        CloseTab()  # Close the last tab since no index is provided
 
     elif choice == 3:
         pass
     elif choice == 4:
         displayTitle(open_tabs)
-        break
     elif choice == 5:
         parent_indx = int(input("Enter the index of the parent tab :"))
         Title = input("Enter your title :")
@@ -158,7 +155,6 @@ while True:
         handlingUrlErrors(URl)
     elif choice == 6:
         clearAllTabs()
-        break
     elif choice == 7:
         file_path = input("Enter your file path :")
         json_path = SaveTabs(file_path, open_tabs)

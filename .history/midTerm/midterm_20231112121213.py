@@ -58,7 +58,7 @@ def displayTitle(open_Tabs):
 
 def clearAllTabs():
     print("Tabs Before Deletion :")
-    print(open_tabs)
+    
     open_tabs.clear()
     print("All Tabs are cleared.")
     print(open_tabs)
@@ -141,7 +141,6 @@ while True:
         pass
     elif choice == 4:
         displayTitle(open_tabs)
-        break
     elif choice == 5:
         parent_indx = int(input("Enter the index of the parent tab :"))
         Title = input("Enter your title :")
@@ -158,7 +157,6 @@ while True:
         handlingUrlErrors(URl)
     elif choice == 6:
         clearAllTabs()
-        break
     elif choice == 7:
         file_path = input("Enter your file path :")
         json_path = SaveTabs(file_path, open_tabs)

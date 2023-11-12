@@ -158,7 +158,6 @@ while True:
         handlingUrlErrors(URl)
     elif choice == 6:
         clearAllTabs()
-        break
     elif choice == 7:
         file_path = input("Enter your file path :")
         json_path = SaveTabs(file_path, open_tabs)
