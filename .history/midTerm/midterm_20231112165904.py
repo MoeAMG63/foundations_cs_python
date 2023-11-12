@@ -2,7 +2,7 @@ import json   # i imported the required libraries
 from bs4 import BeautifulSoup
 import requests
 
-open_tabs = [                   # This variable represrent the opened tabs
+open_tabs = [
             {
                 "Title" : "w3schools",
                 "URl" : "https://www.w3schools.com/"
@@ -30,9 +30,7 @@ open_tabs = [                   # This variable represrent the opened tabs
                 "URl" : "https://www.sefactory.io/"
             }
             ]
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&Choice 7&&&&&&&&&&&&&&&&&&&&&&&&&&&
-#&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+C
 import_data = []
 def SaveTabs(file_path):  # https://youtu.be/pTT7HMqDnJw?si=ZVwGZkGAtY-vxdWr
     try:
