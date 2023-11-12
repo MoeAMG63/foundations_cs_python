@@ -1,4 +1,5 @@
 import json
+import os
 from bs4 import BeautifulSoup
 import requests
 
@@ -198,9 +199,8 @@ while True:
         file_path2 = input("Enter a file path :")
         json_path = loadTabs(file_path2)
         import_data.append(json_path)
-        if json_path:
+        if 
             print("Loaded Tabs :")
             print(import_data)
     elif choice == 9:
-        print("You're Out! XD")
-        exit()
+        pass

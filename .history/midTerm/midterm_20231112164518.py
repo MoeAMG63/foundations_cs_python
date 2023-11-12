@@ -202,5 +202,4 @@ while True:
             print("Loaded Tabs :")
             print(import_data)
     elif choice == 9:
-        print("You're Out! XD")
-        exit()
+        
