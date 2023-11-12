@@ -151,55 +151,55 @@ print("-" * 50)
 
 while True:
     choice = int(input("Choose from the menu :"))
-    if choice < 1 or choice > 9 :
+    if 0 < choice > 9 :
         print("Choose from 1 => 9 !")
-    if choice == 1:
-        Title = input("Enter a title to open a tab :")
-        URl = input("Enter the URL of the page you want to open : ")
-        def handlingUrlErrors(URl):
-            while True:
-                if (URl.startswith("https://")) or (URl.startswith("http://")):
-                    OpenTab(URl, Title)
-                    break
-                else:
-                    print("Error! Check! URL!")
-                    URl = input("Enter the URL of the page you want to open : ")
-        handlingUrlErrors(URl)
-    elif choice == 2:
-        index_of_tab = input("Enter the number of the Tab you want to close (or press Enter to close the last tab): ")
-        CloseTab(index_of_tab, open_tabs)
-        
-    elif choice == 3:
-        tab_index =(input("Enter the tab index to web scrape it :"))
-        webScrap(tab_index)
-    elif choice == 4:
-        displayTitle(open_tabs)
-        break
-    elif choice == 5:
-        parent_indx = int(input("Enter the index of the parent tab :"))
-        Title = input("Enter your title :")
-        URl = input("Enter the URL of the page you want to add : ")
-        def handlingUrlErrors(URl):
-            while True:
-                if (URl.startswith("https://")) or (URl.startswith("http://")):
-                    print(CreateNestedTab(URl, Title, parent_indx ))
-                    print("Nested Tab added Successfully.")
-                    break
-                else:
-                    print("Error! Check! URL!")
-                    URl = input("Enter the URL of the page you want to add : ")
-        handlingUrlErrors(URl)
-    elif choice == 6:
-        clearAllTabs()
-        break
-    elif choice == 7:
-        file_path = input("Enter your file path :")
-        SaveTabs(file_path)
-    elif choice == 8:
-        file_path2 = input("Enter a file path :")
-        json_path = loadTabs(file_path2)
-        import_data.append(json_path)
-        print("Loaded Tabs :")
-        print(import_data)
-    elif choice == 9:
-        pass
+        if choice == 1:
+            Title = input("Enter a title to open a tab :")
+            URl = input("Enter the URL of the page you want to open : ")
+            def handlingUrlErrors(URl):
+                while True:
+                    if (URl.startswith("https://")) or (URl.startswith("http://")):
+                        OpenTab(URl, Title)
+                        break
+                    else:
+                        print("Error! Check! URL!")
+                        URl = input("Enter the URL of the page you want to open : ")
+            handlingUrlErrors(URl)
+        elif choice == 2:
+            index_of_tab = input("Enter the number of the Tab you want to close (or press Enter to close the last tab): ")
+            CloseTab(index_of_tab, open_tabs)
+            
+        elif choice == 3:
+            tab_index =(input("Enter the tab index to web scrape it :"))
+            webScrap(tab_index)
+        elif choice == 4:
+            displayTitle(open_tabs)
+            break
+        elif choice == 5:
+            parent_indx = int(input("Enter the index of the parent tab :"))
+            Title = input("Enter your title :")
+            URl = input("Enter the URL of the page you want to add : ")
+            def handlingUrlErrors(URl):
+                while True:
+                    if (URl.startswith("https://")) or (URl.startswith("http://")):
+                        print(CreateNestedTab(URl, Title, parent_indx ))
+                        print("Nested Tab added Successfully.")
+                        break
+                    else:
+                        print("Error! Check! URL!")
+                        URl = input("Enter the URL of the page you want to add : ")
+            handlingUrlErrors(URl)
+        elif choice == 6:
+            clearAllTabs()
+            break
+        elif choice == 7:
+            file_path = input("Enter your file path :")
+            SaveTabs(file_path)
+        elif choice == 8:
+            file_path2 = input("Enter a file path :")
+            json_path = loadTabs(file_path2)
+            import_data.append(json_path)
+            print("Loaded Tabs :")
+            print(import_data)
+        elif choice == 9:
+            pass

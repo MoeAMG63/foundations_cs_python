@@ -151,7 +151,7 @@ print("-" * 50)
 
 while True:
     choice = int(input("Choose from the menu :"))
-    if choice < 1 or choice > 9 :
+    if choice  :
         print("Choose from 1 => 9 !")
     if choice == 1:
         Title = input("Enter a title to open a tab :")
