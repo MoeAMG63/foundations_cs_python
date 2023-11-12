@@ -37,7 +37,7 @@ import_data = []
 def SaveTabs(file_path):  # https://youtu.be/pTT7HMqDnJw?si=ZVwGZkGAtY-vxdWr
     try:
         with open(file_path, 'w') as file:
-            json.dump(open_tabs, file, indent=2) # here i handeled the user error if file doesnt exist
+            json.dump(open_tabs, file, indent=2) #
             print("Data is Saved!")
         return file
     except FileNotFoundError:
