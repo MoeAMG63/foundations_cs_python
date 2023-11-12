@@ -33,17 +33,15 @@ open_tabs = [
             ]
 
 imported_data = []
-def SaveTabs(file_path, open_tabs):
+def SaveTabs(file_path, openTabs):
     try:
         with open(file_path, 'w') as file:
             json.dump(open_tabs, file, indent=2)
-            return file
     except FileNotFoundError:
         print("File doesn't exist")
         return None
     except Exception:
-        print("An Error has occured!")
-        return None
+        print("An Error has occuredQ")
 
 def OpenTab(Title, URl):
     NewTab = {
@@ -154,8 +152,10 @@ while True:
         clearAllTabs()
         break
     elif choice == 7:
-        file_path = input("Enter your file path :").strip()
-        
+        file_path = input("Enter your file path :")
+        json_path = SaveTabs(file_path, open_tabs)
+        open_tabs.append(json_path)
+        print(open_tabs)
 
     elif choice == 8:
         file_path = input("Enter a file path :")
@@ -164,4 +164,3 @@ while True:
         print(imported_data)
     elif choice == 9:
         break
-

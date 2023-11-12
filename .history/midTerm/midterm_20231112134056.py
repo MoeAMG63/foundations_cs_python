@@ -155,7 +155,15 @@ while True:
         break
     elif choice == 7:
         file_path = input("Enter your file path :").strip()
-        
+        if file_path:
+            json_path = SaveTabs(file_path, open_tabs)
+            if json_path:
+                open_tabs.append(json_path)
+                print(open_tabs)
+            else:
+                print("Error!")
+        else:
+            print("Wrong file path.")
 
     elif choice == 8:
         file_path = input("Enter a file path :")

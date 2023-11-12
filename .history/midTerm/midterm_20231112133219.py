@@ -37,7 +37,7 @@ def SaveTabs(file_path, open_tabs):
     try:
         with open(file_path, 'w') as file:
             json.dump(open_tabs, file, indent=2)
-            return file
+            
     except FileNotFoundError:
         print("File doesn't exist")
         return None
@@ -154,8 +154,10 @@ while True:
         clearAllTabs()
         break
     elif choice == 7:
-        file_path = input("Enter your file path :").strip()
-        
+        file_path = input("Enter your file path :")
+        json_path = SaveTabs(file_path, open_tabs)
+        open_tabs.append(json_path)
+        print(open_tabs)
 
     elif choice == 8:
         file_path = input("Enter a file path :")
