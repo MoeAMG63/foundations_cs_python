@@ -32,6 +32,7 @@ open_tabs = [
             }
             ]
 
+imported_data = []
 def SaveTabs(file_path):
     try:
         with open(file_path, 'w') as file:

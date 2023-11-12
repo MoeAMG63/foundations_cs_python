@@ -32,12 +32,12 @@ open_tabs = [
             }
             ]
 
-def SaveTabs(file_path):
+imported_data = []
+def SaveTabs(file_path, open_tabs):
     try:
         with open(file_path, 'w') as file:
-            json.dump(open_tabs, file, indent=2)
-            print("Data is Saved!")
-        return file
+            data = json.dumps(file)
+        return data
     except FileNotFoundError:
         print("File not found")
         return None
@@ -178,8 +178,9 @@ while True:
         break
     elif choice == 7:
         file_path = input("Enter your file path :")
-        SaveTabs(file_path)
-        
+        json_path = SaveTabs(file_path, open_tabs)
+        imported_data.append(json_path)
+        print(imported_data)
 
     elif choice == 8:
         file_path2 = input("Enter a file path :")

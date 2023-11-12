@@ -32,7 +32,8 @@ open_tabs = [
             }
             ]
 
-def SaveTabs(file_path):
+imported_data = []
+def SaveTabs(file_path, open_tabs):
     try:
         with open(file_path, 'w') as file:
             json.dump(open_tabs, file, indent=2)
@@ -178,7 +179,7 @@ while True:
         break
     elif choice == 7:
         file_path = input("Enter your file path :")
-        SaveTabs(file_path)
+        SaveTabs(file_path, open_tabs)
         
 
     elif choice == 8:

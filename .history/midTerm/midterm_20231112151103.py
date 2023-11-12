@@ -32,6 +32,7 @@ open_tabs = [
             }
             ]
 
+imported_data = []
 def SaveTabs(file_path):
     try:
         with open(file_path, 'w') as file:
@@ -178,7 +179,7 @@ while True:
         break
     elif choice == 7:
         file_path = input("Enter your file path :")
-        SaveTabs(file_path)
+        SaveTabs(file_path, open_tabs)
         
 
     elif choice == 8:

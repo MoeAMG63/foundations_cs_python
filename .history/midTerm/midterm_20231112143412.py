@@ -32,12 +32,12 @@ open_tabs = [
             }
             ]
 
-def SaveTabs(file_path):
+imported_data = []
+def SaveTabs(file_path, open_tabs):
     try:
-        with open(file_path, 'w') as file:
-            json.dump(open_tabs, file, indent=2)
-            print("Data is Saved!")
-        return file
+        with open(file_path, 'r+') as file:
+            data = json.dump(file)
+        return data
     except FileNotFoundError:
         print("File not found")
         return None
@@ -96,18 +96,16 @@ def CloseTab(index_of_tab, open_tabs):
 
 
 
-def loadTabs(file_path2):
+def loadTabs(file_path):
     try:
-        with open(file_path2, 'r') as file2:
-            data = json.load(file2)
+        with open(file_path, 'r') as file:
+            data = json.load(file)
         return data
-    except FileNotFoundError as fn:
-        print(f"File not found : {fn}")
+    except FileNotFoundError:
+        print("File not found")
         return None
-    except PermissionError as pe:
-        print(f"Permission error! {pe}")
-    except ValueError as ve:
-        print(f"Enter a File Path! {ve}")
+    except PermissionError:
+        print("Permission error!")
 
 def webScrap(tab_index):
     try:
@@ -178,13 +176,14 @@ while True:
         break
     elif choice == 7:
         file_path = input("Enter your file path :")
-        SaveTabs(file_path)
-        
+        json_path = SaveTabs(file_path, open_tabs)
+        imported_data.append(json_path)
+        print(imported_data)
 
     elif choice == 8:
-        file_path2 = input("Enter a file path :")
-        json_path2 = loadTabs(file_path2)
-        imported_data.append(json_path2)
+        file_path = input("Enter a file path :")
+        json_path = loadTabs(file_path)
+        imported_data.append(json_path)
         print(imported_data)
     elif choice == 9:
         pass
