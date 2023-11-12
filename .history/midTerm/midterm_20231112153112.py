@@ -113,41 +113,32 @@ def loadTabs(file_path2):
 
 def webScrap(tab_index):
     try:
-        if tab_index:
-            tab = open_tabs[int(tab_index)]
-            scrape_url = tab["URl"]
-            html_content = requests.get(scrape_url)
-            if html_content.status_code == 200:
-                content = BeautifulSoup(html_content.text, 'html.parser')
-                print(content.findAll())
-            else:
-                print("Failed to scrape")
+        tab = open_tabs[tab_index]
+        scrape_url = tab["URl"]
+        html_content = requests.get(scrape_url)
+        if html_content.status_code == 200:
+            content = BeautifulSoup(html_content.text, 'html.parser')
+            print(content.findAll())
         else:
-            tab = open_tabs[-1]
-            scrape_url = tab["URl"]
-            html_content = requests.get(scrape_url)
-            if html_content.status_code == 200:
-                content = BeautifulSoup(html_content.text, 'html.parser')
-                print(content.findAll())
-            else:
-                print("Failed to scrape")
+            print("Failed to scrape")
+            
+    except IndexError:
+        print("Invalid Tab index!")
     except ValueError:
         print("Enter an integer!")
 
 
 menu = '''
 1.Open Tab
-2.Close Tab
-3.Switch Tab
-4.Display All Tabs
-5.Open Nested Tabs
-6.Clear All Tabs
-7.Save Tabs
-8.Import Tabs
-9.Exit
 '''
-print(menu)
-print("-" * 50)
+
+
+
+
+
+
+
+
 choice = int(input("Choose from the menu :"))
 while True:
     if choice == 1:
@@ -167,7 +158,7 @@ while True:
         CloseTab(index_of_tab, open_tabs)
         
     elif choice == 3:
-        tab_index =(input("Enter the tab index to web scrape it :"))
+        tab_index =int(input("Enter the tab index to web scrape it :"))
         webScrap(tab_index)
     elif choice == 4:
         displayTitle(open_tabs)

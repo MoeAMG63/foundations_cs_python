@@ -114,7 +114,7 @@ def loadTabs(file_path2):
 def webScrap(tab_index):
     try:
         if tab_index:
-            tab = open_tabs[int(tab_index)]
+            tab = open_tabs[tab_index]
             scrape_url = tab["URl"]
             html_content = requests.get(scrape_url)
             if html_content.status_code == 200:
@@ -126,11 +126,6 @@ def webScrap(tab_index):
             tab = open_tabs[-1]
             scrape_url = tab["URl"]
             html_content = requests.get(scrape_url)
-            if html_content.status_code == 200:
-                content = BeautifulSoup(html_content.text, 'html.parser')
-                print(content.findAll())
-            else:
-                print("Failed to scrape")
     except ValueError:
         print("Enter an integer!")
 
@@ -167,7 +162,7 @@ while True:
         CloseTab(index_of_tab, open_tabs)
         
     elif choice == 3:
-        tab_index =(input("Enter the tab index to web scrape it :"))
+        tab_index =int(input("Enter the tab index to web scrape it :"))
         webScrap(tab_index)
     elif choice == 4:
         displayTitle(open_tabs)

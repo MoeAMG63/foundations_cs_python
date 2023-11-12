@@ -114,7 +114,7 @@ def loadTabs(file_path2):
 def webScrap(tab_index):
     try:
         if tab_index:
-            tab = open_tabs[int(tab_index)]
+            tab = open_tabs[itab_index]
             scrape_url = tab["URl"]
             html_content = requests.get(scrape_url)
             if html_content.status_code == 200:
