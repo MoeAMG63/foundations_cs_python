@@ -98,7 +98,7 @@ def CloseTab(index_of_tab, open_tabs):
 
 
 
-def loadTabs(file_path2):
+def loadTabs(file_path2, import_data):
     try:
         with open(file_path2, 'r') as file2:
             data = json.load(file2)
@@ -181,11 +181,11 @@ while True:
     elif choice == 7:
         file_path = input("Enter your file path :")
         SaveTabs(file_path)
+        
+
     elif choice == 8:
         file_path2 = input("Enter a file path :")
-        json_path = loadTabs(file_path2)
-        import_data.append(json_path)
-        print("Loaded Tabs :")
-        print(import_data)
+        print(loadTabs(file_path2))
+        
     elif choice == 9:
         pass
