@@ -134,14 +134,14 @@ def loadTabs(file_path2):               #https://youtu.be/Uh2ebFW8OYM?si=YzpiCPB
 def webScrap(tab_index): #https://youtu.be/gRLHr664tXA?si=qs64U_MGP81q1Cle
     try:
         if tab_index:                               # tab index is the user input scrape_url stores the url 
-            tab = open_tabs[int(tab_index)]            # in the tab variable i converted the input to integer 
-            scrape_url = tab["URl"]                     # handling the user error also to prevent the program from crashing
-            html_content = requests.get(scrape_url)        # i stored the HTML content in html_content variable
+            tab = open_tabs[int(tab_index)]            # in the tab variable i converted the input to int 
+            scrape_url = tab["URl"]
+            html_content = requests.get(scrape_url)
             if html_content.status_code == 200:
                 content = BeautifulSoup(html_content.text, 'html.parser')
                 print(content.findAll())
             else:
-                print("Failed to scrape")           # this func webScrap is the switch tab choice i named it like that cause there is web scraping
+                print("Failed to scrape")
         else:
             tab = open_tabs[-1]
             scrape_url = tab["URl"]

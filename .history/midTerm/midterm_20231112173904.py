@@ -141,7 +141,7 @@ def webScrap(tab_index): #https://youtu.be/gRLHr664tXA?si=qs64U_MGP81q1Cle
                 content = BeautifulSoup(html_content.text, 'html.parser')
                 print(content.findAll())
             else:
-                print("Failed to scrape")           # this func webScrap is the switch tab choice i named it like that cause there is web scraping
+                print("Failed to scrape")           # this func webScrap is the switch tab choice i name 
         else:
             tab = open_tabs[-1]
             scrape_url = tab["URl"]
