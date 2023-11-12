@@ -80,18 +80,15 @@ def CreateNestedTab(URl, Title, parent_indx):
 
 def CloseTab(index_of_tab, open_tabs):
     if not index_of_tab:
-        deletedTab = open_tabs.pop(-1)
-        print(f"Last tab deleted => : {deletedTab}")
-        return
+        open_tabs.pop(-1)
+        print("")
     try:
         index = int(index_of_tab)
         if index >= 0 and index < (len(open_tabs)):
             deleted_tab = open_tabs.pop(index)
             print(f"Deleted Tab => : {deleted_tab}")
-        else:
-            print("Index out of range.")
-    except ValueError as ve:
-        print(f"Value Error : {ve}")
+    except ValueError:
+        print("Invalid Index.")
 
 
 

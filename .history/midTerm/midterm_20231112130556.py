@@ -92,6 +92,8 @@ def CloseTab(index_of_tab, open_tabs):
             print("Index out of range.")
     except ValueError as ve:
         print(f"Value Error : {ve}")
+    except IndexError as ie :
+        print(f"Index Error : {ie}")
 
 
 

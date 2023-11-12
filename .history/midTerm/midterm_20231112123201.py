@@ -78,20 +78,9 @@ def CreateNestedTab(URl, Title, parent_indx):
         open_tabs[parent_indx]["Children"].append(nested_tab)
         return (open_tabs)
 
-def CloseTab(index_of_tab, open_tabs):
-    if not index_of_tab:
-        deletedTab = open_tabs.pop(-1)
-        print(f"Last tab deleted => : {deletedTab}")
-        return
-    try:
-        index = int(index_of_tab)
-        if index >= 0 and index < (len(open_tabs)):
-            deleted_tab = open_tabs.pop(index)
-            print(f"Deleted Tab => : {deleted_tab}")
-        else:
-            print("Index out of range.")
-    except ValueError as ve:
-        print(f"Value Error : {ve}")
+def CloseTab(index1=None):
+    
+
 
 
 
@@ -123,9 +112,8 @@ while True:
                     URl = input("Enter the URL of the page you want to open : ")
         handlingUrlErrors(URl)
     elif choice == 2:
-        index_of_tab = input("Enter the number of the Tab you want to close (or press Enter to close the last tab): ")
-        CloseTab(index_of_tab, open_tabs)
-        
+
+
     elif choice == 3:
         pass
     elif choice == 4:

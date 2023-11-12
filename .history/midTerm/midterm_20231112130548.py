@@ -89,9 +89,11 @@ def CloseTab(index_of_tab, open_tabs):
             deleted_tab = open_tabs.pop(index)
             print(f"Deleted Tab => : {deleted_tab}")
         else:
-            print("Index out of range.")
+            print("")
     except ValueError as ve:
         print(f"Value Error : {ve}")
+    except IndexError as ie :
+        print(f"Index Error : {ie}")
 
 
 
