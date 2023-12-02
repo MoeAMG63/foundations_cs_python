@@ -1,0 +1,88 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+class FamilyMember:
+    def __init__(self, name, family_name, birthdate):
+        self.name = name
+        self.family_name = family_name
+        self.birthdate = birthdate
+        self.children = []
+
+class FamilyTree:
+    def __init__(self):
+        self.members = []
+        self.graph = nx.DiGraph()
+
+    def add_family_member(self, name, family_name, birthdate, parent=None):
+        new_member = FamilyMember(name, family_name, birthdate)
+        self.members.append(new_member)
+        self.graph.add_node(new_member.name)
+
+        if parent:
+            parent.children.append(new_member)
+            self.graph.add_edge(parent.name, new_member.name)
+
+    def display_sorted_birthdays(self):
+        sorted_birthdays = sorted(self.members, key=lambda x: x.birthdate)
+        for member in sorted_birthdays:
+            print(f"{member.name} {member.family_name}: {member.birthdate}")
+
+    def visualize_family_tree(self):
+        nx.draw(self.graph, with_labels=True)
+        plt.show()
+
+    def count_same_first_names(self, first_name):
+        count = sum(1 for member in self.members if member.name.lower() == first_name.lower())
+        print(f"Number of family members with the first name '{first_name}': {count}")
+
+def main():
+    family_tree = FamilyTree()
+
+    while True:
+        print("- - - - - - - - - - - - - - -")
+        print("1. Add Family Member")
+        print("2. Display Sorted Birthdays")
+        print("3. Find Relationship")
+        print("4. Visualize Family Tree")
+        print("5. Count Same First Names")
+        print("6. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            name = input("Enter member's name: ")
+            family_name = input("Enter member's family name: ")
+            birthdate = input("Enter member's birthdate: ")
+            parent_name = input("Enter parent's name (leave blank if no parent): ")
+
+            if parent_name:
+                parent = next((member for member in family_tree.members if member.name.lower() == parent_name.lower()), None)
+                if parent:
+                    family_tree.add_family_member(name, family_name, birthdate, parent)
+                else:
+                    print("Parent not found.")
+            else:
+                family_tree.add_family_member(name, family_name, birthdate)
+
+        elif choice == '2':
+            family_tree.display_sorted_birthdays()
+
+        elif choice == '3':
+            pass
+
+        elif choice == '4':
+            family_tree.visualize_family_tree()
+
+        elif choice == '5':
+            first_name = input("Enter first name to count: ")
+            family_tree.count_same_first_names(first_name)
+
+        elif choice == '6':
+            print("Exiting the program.")
+            break
+
+        else:
+            print("Invalid choice. Please enter a valid option.")
+
+if __name__ == "__main__":
+    main()
